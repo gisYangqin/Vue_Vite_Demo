@@ -1,14 +1,39 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
+const aa = 'WWWWWWWWW'
+defineProps <{
+  msg: string
+  a: number
+  }>()
+//
+// const props = defineProps({
+//   msg: {
+//     type: String,
+//     default: ''
+//   },
+//   a: {
+//     type: Number,
+//     default: 22
+//   }
+// })
 
 const count = ref(0)
+
+// const emit = defineEmits(['output'])
+defineEmits<{(e:'con', id:void):void}>()
+
+const con = () => {
+  console.log('count:', count.value)
+}
+
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
+  <h2 @click="con"> {{aa}} </h2>
+  <h3 > {{a}} </h3>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
